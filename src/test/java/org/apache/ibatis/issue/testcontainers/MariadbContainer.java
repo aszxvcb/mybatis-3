@@ -33,7 +33,7 @@ public class MariadbContainer {
   private static MariaDBContainer<?> initContainer() {
     @SuppressWarnings("resource")
     MariaDBContainer<?> container = new MariaDBContainer<>().withDatabaseName(DB_NAME).withUsername(USERNAME)
-      .withPassword(PASSWORD).withUrlParam("useSSL", "false");
+      .withPassword(PASSWORD).withUrlParam("useSSL", "false").withUrlParam("useBulkStmts", "false");
     container.start();
     return container;
   }
